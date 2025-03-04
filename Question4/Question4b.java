@@ -1,6 +1,7 @@
+package Question4;
 import java.util.*;
 
-public class PackageDelivery {
+public class Question4b {
 
     public int minRoads(int[] packages, int[][] roads) {
         int n = packages.length;
@@ -152,7 +153,7 @@ public class PackageDelivery {
     
     // For testing the sample
     public static void main(String[] args) {
-        PackageDelivery solver = new PackageDelivery();
+        Question4b solver = new Question4b();
         int[] packages = {1, 0, 0, 0, 0, 1};
         int[][] roads = {
             {0, 1}, {1, 2}, {2, 3}, {3, 4}, {4, 5}
@@ -160,18 +161,5 @@ public class PackageDelivery {
         int result = solver.minRoads(packages, roads);
         System.out.println("Minimum roads traversed: " + result);
         // Expected output is 2.
-
-        int[] packages2 = {1, 0, 0, 0, 0, 0, 0, 1};
-        int[][] roads2 = {
-            {0, 1},
-            {1, 2},
-            {2, 3},
-            {3, 4},
-            {4, 5},
-            {5, 6},
-            {6, 7}
-        };
-        int result2 = solver.minRoads(packages2, roads2);
-        System.out.println("Minimum roads traversed: " + result2); //6
     }
 }

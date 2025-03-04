@@ -1,3 +1,6 @@
+package Question2;
+
+
 public class Question2a {
 
     public static int calculateRewards(int[] ratings) {

@@ -1,3 +1,5 @@
+package Question1;
+
 import java.util.PriorityQueue;
 
 public class Question1b {
@@ -7,10 +9,10 @@ public class Question1b {
         // Create a min-heap to store the combined returns and their indices
         PriorityQueue<int[]> minHeap = new PriorityQueue<>((a, b) -> Integer.compare(a[0], b[0]));
 
-        // Step 1: Add all combinations of the first element in returns1 with the first k elements in returns2
+        // Step 1: Multiply all combinations of the first element in returns1 with the first k elements in returns2
         for (int j = 0; j < returns2.length && j < k; j++) {
-            int sum = returns1[0] + returns2[j]; // Calculate the sum
-            minHeap.offer(new int[]{sum, 0, j}); // Add the sum and indices to the heap
+            int product = returns1[0] * returns2[j]; // Calculate the product
+            minHeap.offer(new int[]{product, 0, j}); // Insert the product to the heap
         }
 
         // Step 2: Extract the smallest element from the heap k times
@@ -22,8 +24,8 @@ public class Question1b {
 
             // If there are more elements in returns1 to pair with returns2[j]
             if (i + 1 < returns1.length) {
-                int newSum = returns1[i + 1] + returns2[j]; // Calculate the new sum
-                minHeap.offer(new int[]{newSum, i + 1, j}); // Add the new sum to the heap
+                int newProduct = returns1[i + 1] * returns2[j]; // Calculate the new product
+                minHeap.offer(new int[]{newProduct, i + 1, j}); // Add the new product to the heap
             }
 
             count++; // Increment the counter

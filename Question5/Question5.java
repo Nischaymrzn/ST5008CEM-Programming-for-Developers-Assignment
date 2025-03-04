@@ -1,9 +1,10 @@
+package Question5;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
 import javax.swing.*;
 
-public class NetworkOptimizer extends JFrame {
+public class Question5 extends JFrame {
 
     // Graph Data Structures
     private ArrayList<Node> nodes;
@@ -28,7 +29,7 @@ public class NetworkOptimizer extends JFrame {
     private Node selectedSPSource = null;
     private Node selectedSPDestination = null;
 
-    public NetworkOptimizer() {
+    public Question5() {
         super("Network Optimizer");
         nodes = new ArrayList<>();
         edges = new ArrayList<>();
@@ -308,7 +309,7 @@ public class NetworkOptimizer extends JFrame {
         graphPanel.repaint();
     }
     
-    // ---------------- Inner Classes ----------------
+    // Inner Classes 
     class Node {
         int id;
         String label;
@@ -430,7 +431,7 @@ public class NetworkOptimizer extends JFrame {
                         selectedNodeForEdge = clicked;
                         repaint();
                     } else if (selectedNodeForEdge != clicked) {
-                        String input = JOptionPane.showInputDialog(NetworkOptimizer.this, "Enter cost and bandwidth (comma separated):", "Edge Details", JOptionPane.PLAIN_MESSAGE);
+                        String input = JOptionPane.showInputDialog(Question5.this, "Enter cost and bandwidth (comma separated):", "Edge Details", JOptionPane.PLAIN_MESSAGE);
                         if (input != null && !input.trim().isEmpty()) {
                             try {
                                 String[] parts = input.split(",");
@@ -440,7 +441,7 @@ public class NetworkOptimizer extends JFrame {
                                 edges.add(newEdge);
                                 updateNetworkInfo();
                             } catch (Exception ex) {
-                                JOptionPane.showMessageDialog(NetworkOptimizer.this, "Invalid input. Please enter cost and bandwidth as numbers separated by a comma.");
+                                JOptionPane.showMessageDialog(Question5.this, "Invalid input. Please enter cost and bandwidth as numbers separated by a comma.");
                             }
                         }
                         selectedNodeForEdge = null;
@@ -482,7 +483,7 @@ public class NetworkOptimizer extends JFrame {
     }
     
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> new NetworkOptimizer().setVisible(true));
+        SwingUtilities.invokeLater(() -> new Question5().setVisible(true));
     }
 }
 

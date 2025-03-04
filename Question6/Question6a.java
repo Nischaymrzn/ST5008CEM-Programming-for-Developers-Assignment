@@ -1,3 +1,4 @@
+package Question6;
 class NumberPrinter {
     private int n;
     private int current = 1;
@@ -50,7 +51,7 @@ class NumberPrinter {
     }
 }
 
-public class ThreadController {
+public class Question6a {
     public static void main(String[] args) {
         int n = 5; // For example, to print sequence "0102030405"
         NumberPrinter np = new NumberPrinter(n);

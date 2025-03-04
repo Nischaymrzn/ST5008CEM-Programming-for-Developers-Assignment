@@ -1,3 +1,5 @@
+package Question2;
+
 public class Question2b {
     
     public static int[] closestPair(int[] x_coords, int[] y_coords) {
