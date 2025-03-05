@@ -1,4 +1,5 @@
 package Question6;
+
 class NumberPrinter {
     private int n;
     private int current = 1;
